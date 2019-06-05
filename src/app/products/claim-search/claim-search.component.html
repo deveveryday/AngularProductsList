@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Claim Search</h4>
+
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let claim of claims$ | async" >
+      <a routerLink="/products/detail/{{claim.id}}">
+        {{claim.name}}
+      </a>
+    </li>
+  </ul>
+</div>

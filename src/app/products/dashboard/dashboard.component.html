@@ -1,0 +1,11 @@
+<h3>Top Products</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let claim of claims" class="col-1-4"
+      routerLink="/products/detail/{{claim.id}}">
+    <div class="module claim" title="Click to Edit Product: {{claim.name}}">
+      <h4>{{claim.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-claim-search></app-claim-search>

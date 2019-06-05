@@ -1,0 +1,20 @@
+<h3>Products</h3>
+
+<div>
+  <label>Product name:
+    <input #claimName />
+  </label>
+  <button (click)="add(claimName.value); claimName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="claims">
+  <li *ngFor="let claim of claims">
+    <a routerLink="/products/detail/{{claim.id}}">
+      <span class="badge">{{claim.id}}</span> {{claim.name}}
+    </a>
+    <button class="delete" title="delete claim"
+      (click)="delete(claim)">x</button>
+  </li>
+</ul>
